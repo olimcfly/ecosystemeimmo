@@ -1,0 +1,17 @@
+[2026-01-20 21:06:14] === DÉBUT REQUEST === | {"method":"POST"}
+[2026-01-20 21:06:14] ✓ Vérifications de base OK
+[2026-01-20 21:06:14] Tentative include database.php | {"path":"\/home\/tasq5564\/ecosystemeimmo.fr\/config\/database.php","exists":true}
+[2026-01-20 21:06:14] ✓ database.php inclus avec succès
+[2026-01-20 21:06:14] ✓ Fonction getDB() trouvée
+[2026-01-20 21:06:14] ✓ Ressources configurées | {"count":7}
+[2026-01-20 21:06:14] Données POST reçues | {"firstname":"\u2713","email":"\u2713","resource":"neuropersona"}
+[2026-01-20 21:06:14] ✓ Validations OK
+[2026-01-20 21:06:14] Tentative connexion BDD
+[2026-01-20 21:06:14] ✓ Connexion BDD établie
+[2026-01-20 21:06:14] Lead existant trouvé | {"leadId":7}
+[2026-01-20 21:06:14] ✓ Lead mise à jour | ["00000",null,null]
+[2026-01-20 21:06:14] ERREUR PDO | {"message":"SQLSTATE[42S22]: Column not found: 1054 Unknown column 'resource_type' in 'INSERT INTO'","code":"42S22"}
+[2026-01-20 21:09:58] === DÉBUT REQUEST === | {"method":"GET"}
+[2026-01-20 21:09:58] ERREUR : méthode non POST | {"method":"GET"}
+[2026-01-20 21:10:06] === DÉBUT REQUEST === | {"method":"GET"}
+[2026-01-20 21:10:06] ERREUR : méthode non POST | {"method":"GET"}

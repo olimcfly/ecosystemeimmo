@@ -1,0 +1,109 @@
+Options -Indexes
+RewriteEngine On
+
+# ── 1. Forcer HTTPS ───────────────────────────────────────────
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# ── 2. Supprimer .php visible — front/pages uniquement ────────
+RewriteCond %{THE_REQUEST} \s/+front/pages/([^./?]+)\.php[\s?] [NC]
+RewriteRule ^ /%1 [R=301,L]
+
+# ── 3. Supprimer .php visible — admin/auth uniquement ─────────
+RewriteCond %{THE_REQUEST} \s/+admin/auth/([^./?]+)\.php[\s?] [NC]
+RewriteRule ^ /admin/%1 [R=301,L]
+
+# ── 4. URLs propres ADMIN ─────────────────────────────────────
+RewriteRule ^admin/login/?$     admin/auth/login.php [L]
+RewriteRule ^admin/logout/?$    admin/auth/logout.php [L]
+RewriteRule ^admin/otp/?$       admin/auth/otp-verify.php [L]
+
+# ── 5. URLs propres FRONT ─────────────────────────────────────
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^villes/?$              front/pages/villes-pilotes.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^verifier-ma-ville/?$   front/pages/verifier-ma-ville.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^traitement-ville/?$    front/pages/traitement-ville.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^merci-ville/?$         front/pages/merci-ville.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^plateforme/?$          front/pages/plateforme.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^methode/?$             front/pages/methode.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^modules/?$             front/pages/licence.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^licence/?$             front/pages/licence.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^demo/?$                front/pages/demo.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^temoignages/?$         front/pages/temoignages.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^pourquoi/?$            front/pages/pourquoi.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^avance/?$              front/pages/avance-concurrents.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ressources/?$          front/pages/ressources.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^rdv/?$                 front/pages/rdv.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^tarifs/?$              front/pages/tarifs.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^contact/?$             front/pages/contact.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^assistant/?$           front/pages/assistant.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^mentions-legales/?$    front/pages/mentions-legales.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^cgv/?$                 front/pages/cgv.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^confidentialite/?$     front/pages/politique-confidentialite.php [L]
+
+# ── 6. URLs propres BLOG ──────────────────────────────────────
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^blog/?$                front/blog/blog.php [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^blog/([a-z0-9\-]+)/?$  front/blog/articles/$1.php [L]

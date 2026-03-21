@@ -1,0 +1,46 @@
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+logs/*
+*.log
+
+# Uploads
+uploads/*
+downloads/*
+temp/*
+siteeco.zip
+
+# Backups
+*.zip
+*.tar.gz
+*.sql
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cache
+.cache/
+cache/*
+
+# Credentials (keep local only)
+config/database.php.local
+admin/config/admin-config.php.local
+
+# Node
+node_modules/
+package-lock.json
+
+# Composer
+vendor/
+composer.lock

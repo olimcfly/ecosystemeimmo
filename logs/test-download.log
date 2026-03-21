@@ -1,0 +1,13 @@
+
+
+=== NOUVEAU REQUEST ===
+Timestamp: 2026-01-20 22:55:43
+Méthode: POST
+POST data: {"resource":"neuropersona","firstname":"Olivier","email":"oliviercolas83@gmail.com","city":"Megeve"}
+✓ POST reçu
+Données reçues: firstname=Olivier, email=oliviercolas83@gmail.com, resource=neuropersona
+✓ Email valide
+✓ Prénom valide
+✓ Ressource valide
+✓ Données enregistrées dans leads-test.txt
+✓ Redirection vers: /front/ressources/merci-neuropersona.php
